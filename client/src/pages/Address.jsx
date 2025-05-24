@@ -44,16 +44,16 @@ const Address = () => {
         <h2 className='font-semibold text-ellipsis line-clamp-1'>
           Address
         </h2>
-        <button onClick={()=>setOpenAddress(true)} className='border border-yellow-300 text-yellow-300 px-3 hover:bg-yellow-300 hover:text-black py-1 rounded-full'>
+        <button onClick={()=>setOpenAddress(true)} className='border  border-yellow-300 text-yellow-300 px-3 hover:bg-yellow-300 hover:text-black py-1 rounded-full'>
            Add Address
         </button>
       </div>
-      <div className='bg-blue-50 p-2 grid gap-4'>
+      <div className='bg-blue-50 p-2 grid gap-4 border border-gray-200'>
                     {
                         addressList.map((address,index)=>{
                             return(
                                
-                                <div className={`border rounded p-3 flex gap-3 bg-white ${!address.status && 'hidden'}`}>
+                                <div className={`border  border-gray-200 rounded p-3 flex gap-3 bg-white ${!address.status && 'hidden'}`}>
                                    
                                     <div className='w-full'>
 
@@ -76,7 +76,7 @@ const Address = () => {
                             )
                         })
                     }
-                <div onClick={()=>setOpenAddress(true)} className='h-16 bg-blue-50 border-2 border-dashed flex justify-center items-center cursor-pointer'>
+                <div onClick={()=>setOpenAddress(true)} className='h-16 bg-blue-50 border-2  border-gray-200 border-dashed flex justify-center items-center cursor-pointer'>
                    Add address 
                 </div>
        </div>

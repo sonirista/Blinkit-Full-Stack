@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 
  export async function CashOnDeliveryOrderController (request,response){
     try {
-        const userID = request.userID 
+        const userId = request.userId
 
         const { list_items ,totalAmt, addressId, subTotalAmt} = request.body
 
@@ -15,7 +15,7 @@ import mongoose from "mongoose";
 
         const payload = list_items.map(el=>{
             return({
-            userID :userID,
+            userId : userId,
             orderId : `ORD-${new mongoose.Types.ObjectId()}`,
             productId : el.productId._id,
             product_details : {
@@ -35,8 +35,8 @@ import mongoose from "mongoose";
         const generateOrder = await OrderModel.insertMany(payload)
 
         //remove from cart
-         const removeCartItems = await CartProductModel.deleteMany({userId : userID})
-         const updateInUser = await UserModel.updateOne({_id : userID},{ shopping_cart : []})
+         const removeCartItems = await CartProductModel.deleteMany({userId : userId})
+         const updateInUser = await UserModel.updateOne({ _id : userId },{ shopping_cart : []})
 
          return response.json({
             message : "Order Successfully",
@@ -76,12 +76,14 @@ export async function paymentController(request,response) {
                 currency : 'inr',
                 product_data : {
                     name :item.productId.name,
-                    images : item.productId.image,
+                    images :[item.productId.image],
                     metadata : {
                         productId : item.productId._id
                     }
                 },
-                unit_amount : PricewithDiscount(item.productId.price,item.productId.discount) * 100
+                // unit_amount : PricewithDiscount(item.productId.price,item.productId.discount) * 100
+                unit_amount: Math.round(PricewithDiscount(item.productId.price, item.productId.discount) * 100)
+
               },
               adjustable_quantity : {
                 enabled : true,

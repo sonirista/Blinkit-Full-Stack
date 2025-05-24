@@ -33,9 +33,9 @@ const CheckoutPage = () => {
                 }
             })
 
-            const {data : responsedata} = response
-            if(responsedata.success){
-                toast.success(responsedata.message)
+            const {data : responseData} = response
+            if(responseData.success){
+                toast.success(responseData.message)
                 if(fetchCartItem){
                     fetchCartItem()
                 }

@@ -158,19 +158,19 @@ const UploadProduct = () => {
           <div className='grid gap-1'>
             <label htmlFor='name' className='font-medium'>Name</label>
             <input id='name' type='text' placeholder='Enter  Product name' name='name' value={data.name} onChange={handleChange} required
-              className='bg-blue-50 p-2 outline-none border focus-within:border-yellow-300 rounded'
+              className='bg-blue-50 p-2 outline-none border border-gray-300 focus-within:border-yellow-300 rounded'
             />
           </div>
           <div className='grid gap-1'>
             <label htmlFor='description ' className='font-medium'>Description</label>
             <textarea id='description' type='text' placeholder='Enter  Product Description' name='description' value={data.description} onChange={handleChange} required multiple rows={3}
-              className='bg-blue-50 p-2 outline-none border focus-within:border-yellow-300 rounded resize-none'
+              className='bg-blue-50 p-2 outline-none border border-gray-300 focus-within:border-yellow-300 rounded resize-none'
             />
           </div>
           <div>
             <p className='font-medium'>Image</p>
             <div>
-              <label htmlFor='productImage' className='bg-blue-100 h-24 border rounded flex justify-center items-center cursor-pointer'>
+              <label htmlFor='productImage' className='bg-blue-100 h-24 border border-gray-300 rounded flex justify-center items-center cursor-pointer'>
                 <div className=' text-center flex justify-center items-center flex-col'>
                   {
                     imageLoading ? <Loading /> : (
@@ -211,7 +211,7 @@ const UploadProduct = () => {
           <div className='grid gap-1 '>
             <label className='font-medium'>Category</label>
             <div>
-              <select className='bg-blue-50 border w-full p-2 rounded' value={selectCategory} onChange={(e) => {
+              <select className='bg-blue-50 border border-gray-300 w-full p-2 rounded' value={selectCategory} onChange={(e) => {
                 const value = e.target.value
                 const category = allCategory.find(el => el._id === value)
                 setData((preve) => {
@@ -249,7 +249,7 @@ const UploadProduct = () => {
           <div className='grid gap-1 '>
             <label className='font-medium'>Sub Category</label>
             <div>
-              <select className='bg-blue-50 border w-full p-2 rounded' value={selectSubCategory} onChange={(e) => {
+              <select className='bg-blue-50 border border-gray-300 w-full p-2 rounded' value={selectSubCategory} onChange={(e) => {
                 const value = e.target.value
                 const subCategory = allSubCategory.find(el => el._id === value)
                 setData((preve) => {
@@ -288,25 +288,25 @@ const UploadProduct = () => {
           <div className='grid gap-1'>
             <label htmlFor='unit ' className='font-medium'>Unit</label>
             <input id='unit' type='text' placeholder='Enter  Product unit' name='unit' value={data.unit} onChange={handleChange} required
-              className='bg-blue-50 p-2 outline-none border focus-within:border-yellow-300 rounded'
+              className='bg-blue-50 p-2 outline-none border border-gray-300 focus-within:border-yellow-300 rounded'
             />
           </div>
           <div className='grid gap-1'>
             <label htmlFor='stock ' className='font-medium'>Number Of Stock</label>
             <input id='stock' type='number' placeholder='Enter  Product stock' name='stock' value={data.stock} onChange={handleChange} required
-              className='bg-blue-50 p-2 outline-none border focus-within:border-yellow-300 rounded'
+              className='bg-blue-50 p-2 outline-none border border-gray-300 focus-within:border-yellow-300 rounded'
             />
           </div>
           <div className='grid gap-1'>
             <label htmlFor='price ' className='font-medium'>Price</label>
             <input id='price' type='number' placeholder='Enter  Product price' name='price' value={data.price} onChange={handleChange} required
-              className='bg-blue-50 p-2 outline-none border focus-within:border-yellow-300 rounded'
+              className='bg-blue-50 p-2 outline-none border border-gray-300 focus-within:border-yellow-300 rounded'
             />
           </div>
           <div className='grid gap-1'>
             <label htmlFor='discount ' className='font-medium'>Discount</label>
             <input id='discount' type='number' placeholder='Enter  Product discount' name='discount' value={data.discount} onChange={handleChange} required
-              className='bg-blue-50 p-2 outline-none border focus-within:border-yellow-300 rounded'
+              className='bg-blue-50 p-2 outline-none border border-gray-300 focus-within:border-yellow-300 rounded'
             />
           </div>
           {/* add more field */}

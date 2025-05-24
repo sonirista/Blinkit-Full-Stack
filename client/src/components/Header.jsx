@@ -136,7 +136,7 @@ const Header = () => {
                                     )
                                 }
 
-                                <button onClick={()=>setOpenCartSection(true)} className='flex items-center gap-2 bg-green-700 hover:bg-green-800 px-3  rounded text-white'>
+                                <button onClick={()=>setOpenCartSection(true)} className='flex items-center gap-2 bg-green-700 hover:bg-green-800 px-3 h-10  rounded text-white'>
                                     {/* add to card icons */}
                                     <div className='animate-bounce'><BsFillCartCheckFill size={26}/> </div>
                                     <div className='font-semibold text-sm'>
